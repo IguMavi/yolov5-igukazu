@@ -436,3 +436,6 @@ def main(opt):
 if __name__ == "__main__":
     opt = parse_opt()
     main(opt)
+for i in det[:, 5].unique():
+    if(names[i] == 'person'):
+        print('True')
