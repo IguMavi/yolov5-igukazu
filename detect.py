@@ -251,9 +251,6 @@ def run(
                 for c in det[:, 5].unique():
                     if(int(c) == 0):
                         verificar = True
-                        print(verificar)
-                    else:
-                        print("CHATOOOOO")
                     n = (det[:, 5] == c).sum()  # detections per class
                     s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
 
@@ -284,6 +281,8 @@ def run(
                         annotator.box_label(xyxy, label, color=colors(c, True))
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / "crops" / names[c] / f"{p.stem}.jpg", BGR=True)
+                if verificar:
+                    print("DEU CERTOOO")
 
             # Stream results
             im0 = annotator.result()
