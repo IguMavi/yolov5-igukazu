@@ -248,6 +248,9 @@ def run(
 
                 # Print results
                 for c in det[:, 5].unique():
+                    if(names[int(c)] == "person"):
+                        verificar = True
+                        print(verificar)
                     n = (det[:, 5] == c).sum()  # detections per class
                     s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
 
