@@ -67,6 +67,7 @@ from utils.torch_utils import select_device, smart_inference_mode
 
 
 @smart_inference_mode()
+verificar = False
 def run(
     weights=ROOT / "yolov5s.pt",  # model path or triton URL
     source=ROOT / "data/images",  # file/dir/URL/glob/screen/0(webcam)
@@ -248,7 +249,7 @@ def run(
 
                 # Print results
                 for c in det[:, 5].unique():
-                    if(names[int(c)] == "person"):
+                    if(int(c) == 0):
                         verificar = True
                         print(verificar)
                     else:
