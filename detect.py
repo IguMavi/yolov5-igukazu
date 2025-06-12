@@ -38,7 +38,7 @@ from utils.general import (
 from utils.torch_utils import select_device, smart_inference_mode
 
 
-@smart_inference_mode()@smart_inference_mode()
+@smart_inference_mode()
 def run(
     weights=ROOT / "yolov5s.pt",  # model path or triton URL
     source=ROOT / "data/images",  # file/dir/URL/glob/screen/0(webcam)
